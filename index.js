@@ -14,6 +14,9 @@ app.use("/get-weather", async function (req, res) {
   res.send(result.data);
 });
 
+app.use("/", function(req, res) {
+  res.send("HTTP 200 Ok");
+});
 // 서버리슨
 http.listen(8080, () => {
   console.log("Server listening on port 8080");
