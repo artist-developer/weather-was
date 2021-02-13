@@ -9,7 +9,7 @@ var conn = mysql.createConnection({
 
 conn.connect();
 
-conn.query('SELECT * FROM weatherTable', function*(err, results, fields){
+conn.query('SELECT * FROM weatherTable', function(err, results, fields){
     if(err){
         console.log(err);
     }
