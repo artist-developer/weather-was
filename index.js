@@ -18,7 +18,7 @@ const region = "Seoul";
 
 app.use(cors());
 
-conn.connect();
+//conn.connect();
 
 app.use("/get-weather", async function (req, res) {
   console.log("get-weather");
@@ -28,18 +28,17 @@ app.use("/get-weather", async function (req, res) {
   );
   
   var sql = "INSERT INTO weatherTable VALUES (NULL, " 
-            + result.data.main.temp +", "
+	    + result.data.main.temp +", "
             + result.data.main.feels_like +", "
             + result.data.main.temp_min +", "
             + result.data.main.temp_max +", "
             + result.data.main.pressure +", "
-            + result.data.main.humidity +", "
-            + result.data.name + ")";
+            + result.data.main.humidity +")";
   conn.query(sql, function(err, results, fields){
     if(err){
       console.log(err);
     }
-    console.log("weather info " + results.insertid + " inserted.");
+    console.log("weather info inserted.");
   });
 
   res.send(result.data);  
@@ -54,4 +53,4 @@ http.listen(8080, () => {
   console.log("Server listening on port 8080");
 });
 
-conn.end();
+//conn.end();
