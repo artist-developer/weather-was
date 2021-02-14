@@ -14,6 +14,6 @@ conn.query('SELECT * FROM weatherTable', function(err, results, fields){
         console.log(err);
     }
     console.log(results);
-})
+});
 
 conn.end();
