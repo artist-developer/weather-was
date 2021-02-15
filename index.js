@@ -45,6 +45,7 @@ app.use("/get-weather", async function (req, res) {
 });
 
 app.use("/", function(req, res) {
+	console.log("tqtq");
   res.send("HTTP 200 Ok");
 });
 
