@@ -33,19 +33,19 @@ app.use(cors());
 app.use("/get-weather", async function (req, res) {
   console.log("get-weather");
 
-  var sql = "INSERT INTO weatherTable VALUES (NULL, " 
-      + weather_obj.main.temp +", "
-      + weather_obj.main.feels_like +", "
-      + weather_obj.main.temp_min +", "
-      + weather_obj.main.temp_max +", "
-      + weather_obj.main.pressure +", "
-      + weather_obj.main.humidity +")";
-  conn.query(sql, function(err, results, fields){
-    if(err){
-      console.log(err);
-    }
-    console.log("weather info inserted.");
-  });
+  // var sql = "INSERT INTO weatherTable VALUES (NULL, " 
+  //     + weather_obj.main.temp +", "
+  //     + weather_obj.main.feels_like +", "
+  //     + weather_obj.main.temp_min +", "
+  //     + weather_obj.main.temp_max +", "
+  //     + weather_obj.main.pressure +", "
+  //     + weather_obj.main.humidity +")";
+  // conn.query(sql, function(err, results, fields){
+  //   if(err){
+  //     console.log(err);
+  //   }
+  //  console.log("weather info inserted.");
+  //});
 
   res.send(weather_obj);  
 });
